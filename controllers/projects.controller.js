@@ -39,3 +39,20 @@ module.exports.like = (req, res, next) => {
     })
     .catch(next);
 }
+
+module.exports.detail = (req, res, next) => {
+  const params = { project: req.params.id };
+  console.log(params);
+  Project.findOne(params)
+    .then(project => {
+      console.log("project: ")
+      console.log(project)
+      if (project) {
+        res.render('projects/detail', { project })
+          
+      } else {
+        res.render('notfound')
+      }
+    })
+    .catch(next);
+}

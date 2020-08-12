@@ -10,12 +10,16 @@ const projectSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    projectName: {
+      type: String,
+      required: true
+    },
     body: {
       type: String,
       required: true,
     },
-    image: {
-      type: String,
+    file: {
+      type: [],
     },
   },
   { timestamps: true, toJSON: { virtuals: true } }
@@ -38,3 +42,4 @@ projectSchema.virtual("likes", {
 const Project = mongoose.model("Project", projectSchema);
 
 module.exports = Project;
+

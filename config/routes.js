@@ -15,5 +15,6 @@ router.post('/users', sessionMiddleware.isNotAuthenticated, uploads.single('avat
 router.get('/activate/:token', sessionMiddleware.isNotAuthenticated, usersController.activateUser);
 router.post('/logout', sessionMiddleware.isAuthenticated, usersController.logout);
 router.get('/projects', sessionMiddleware.isAuthenticated, projectsController.list);
+router.get('/projects/:id', sessionMiddleware.isAuthenticated, projectsController.detail);
 router.post('/projects/:id/like', sessionMiddleware.isAuthenticated, projectsController.like)
 module.exports = router;

@@ -1,0 +1,29 @@
+<section id="project">
+  
+  <div class="card w-100 mb-3">
+    <div class="card-body">
+      <p class="card-subtitle mb-2 text-muted">{{project.createdAt}}</p>
+
+      <p class="card-text">
+        {{project.body}}
+      </p>
+
+      
+
+      <a class="text-muted d-block text-sm mb-2" href="/projects/{{project._id}}">
+        <i class="fa fa-comments"></i>
+        {{project.comments.length}} comments
+      </a>
+
+      <div>
+        <button class="btn btn-sm mb-2 btn-outline-danger" id="{{project._id}}" onclick="like(event)">
+          <i class="fa fa-heart"></i>
+          <span class="likes-count">{{project.likes.length}}</span> likes
+        </button>
+      </div>
+
+      <a href="/{{project.user.username}}" class="d-block">@{{project.user.username}}</a>
+    </div>
+  </div>
+  
+</section>
