@@ -11,19 +11,18 @@ const path = require('path')
 
 
 function filesUrls() {
-    var filesNumb = Math.random() * 5
     var files = []
-    for (let a = 0; a < filesNumb; a++) {
-        files.push(path.format({ base: faker.fake("{{random.words}}").replace(/ /g, path.sep).toLowerCase() })+'.html')
+    var extensions = ['.jpg', '.tiff', '.pdf', '.html', '.js', '.hbs']
+    for (let a = 0; a < (Math.floor(Math.random() * 5)); a++) {
+        files.push(path.format({ base: faker.fake("{{random.words}}").replace(/ /g, path.sep).toLowerCase() }) + extensions[Math.floor(Math.random() * extensions.length)])
     }
     return files
 }
 
-
 Promise.all([
-    User.deleteMany(),
-    Project.deleteMany(),
-])
+        User.deleteMany(),
+        Project.deleteMany(),
+    ])
     .then(() => {
         console.log('empty database')
 
@@ -50,16 +49,16 @@ Promise.all([
 
                         })
                         project.save()
-                        .then(pr => {
-                            for (let k = 0; k < Math.floor(Math.random()*7); k++){
-                                const comment = new Comment({
-                                    user: userIds[Math.floor(Math.random()*userIds.length)],
-                                    project: pr._id,
-                                    text: faker.lorem.sentence(),
-                                })
-                                comment.save();
-                            }
-                        })
+                            .then(pr => {
+                                for (let k = 0; k < Math.floor(Math.random() * 7); k++) {
+                                    const comment = new Comment({
+                                        user: userIds[Math.floor(Math.random() * userIds.length)],
+                                        project: pr._id,
+                                        text: faker.lorem.sentence(),
+                                    })
+                                    comment.save();
+                                }
+                            })
                     }
                 })
         }

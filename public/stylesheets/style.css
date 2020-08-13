@@ -1,0 +1,56 @@
+.main-section {
+    margin-top: 50px;
+    font-family: 'Abel', sans-serif;
+}
+
+.card-text {
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-header-first {
+    margin-top: -40px;
+    box-shadow: 1px 5px 15px #a2a2a2;
+}
+
+.card-section {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.card-header-first span i,
+.card-section-third span i {
+    padding: 17px;
+    margin: 0px 10px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    box-shadow: 1px 6px 24px #d2d2d2;
+    background-image: linear-gradient( 70.5deg, rgba(0, 81, 80, 1) 23.5%, rgba(0, 134, 132, 1) 91.3%);
+}
+
+.card-header-first span i:hover,
+.card-section-third span i:hover {
+    box-shadow: 1px 1px 15px #000;
+}
+
+.card-header-second {
+    box-shadow: 1px 5px 15px #a2a2a2;
+    margin: -25px -25px 0px -25px;
+    background: linear-gradient(-90deg, #90E8FC, #0080FF);
+}
+
+.card-header-third {
+    margin-top: -25px;
+    box-shadow: 1px 5px 15px #a2a2a2;
+    background: linear-gradient(-90deg, #F2635F, #F4D00C);
+}
+
+.card-section-third span i {
+    background: linear-gradient(-90deg, #F4D00C, #F2635F);
+}
+
+.card-section:hover {
+    box-shadow: 1px 1px 20px #d2d2d2;
+}
